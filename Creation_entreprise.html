@@ -108,20 +108,21 @@
                     <input type="text" name="nb_ancien_stagiaire"
                         placeholder="Nombre d'anciens stagiaires venant de CESI"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
-                    <div>
-                        <i class="fa fa-star" name="star1" id="star1"></i>
-                        <i class="fa fa-star" name="star2" id="star2"></i>
-                        <i class="fa fa-star" name="star3" id="star3"></i>
-                        <i class="fa fa-star" name="star4" id="star4"></i>
-                        <i class="fa fa-star" name="star5" id="star5"></i>
+                        <p class="my-1">Confiance du pilote</p>
+                    <div class="">
+                        <i class="fa fa-star cursor-pointer text-yellow-300" name="star1" id="star1" onclick="star(1)"></i>
+                        <i class="fa fa-star cursor-pointer text-black" name="star2" id="star2" onclick="star(2)"></i>
+                        <i class="fa fa-star cursor-pointer text-black" name="star3" id="star3" onclick="star(3)"></i>
+                        <i class="fa fa-star cursor-pointer text-black" name="star4" id="star4" onclick="star(4)"></i>
+                        <i class="fa fa-star cursor-pointer text-black" name="star5" id="star5" onclick="star(5)"></i>
                     </div>
 
                     <div class="flex  justify-evenly">
                         <button type="reset" name="reset"
-                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Annuler
+                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0] cursor-pointer"> Annuler
                         </button>
                         <button type="submit" name="valider"
-                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Valider
+                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0] cursor-pointer"> Valider
                         </button>
                     </div>
 
@@ -131,32 +132,51 @@
 
     </div>
 <script>
-    let star;
-    function valeur_star(star){
-        star = (this.id)
-    }
 
-    fa-star.addEventListener("click",valeur_star)
+    let star_value;
 
     function star(etoile){
         switch(etoile){
-            case "star5":
-
+            case 5:
+                star5.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star4.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star3.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star2.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star1.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
             break;
-            case "star4":
-
+            case 4:
+                star5.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star4.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star3.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star2.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star1.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
             break;
-            case "star3":
-
+            case 3:
+                star5.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star4.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star3.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star2.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star1.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
             break;
-            case "star2":
-
+            case 2:
+                star5.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star4.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star3.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star2.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
+                star1.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
             break;
-            case "star1":
-
+            case 1:
+                star5.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star4.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star3.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star2.setAttribute("class", "fa fa-star text-black cursor-pointer");
+                star1.setAttribute("class", "fa fa-star text-yellow-300 cursor-pointer");
             break;
-        }
-    }
+           
+        };
+        star_value = etoile;
+       };
+
 </script>
 
 
