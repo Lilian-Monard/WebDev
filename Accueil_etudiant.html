@@ -97,8 +97,7 @@
 
     <!--</div>-->
     <div>
-        <div
-            class="hidden float-left lg:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
+        <div class="hidden float-left lg:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
             <!-- Contenu de la side left bar -->
             <div class="my-4 mt-0 ml-0 w-auto">
                 <a href=""><i onclick="bgChange(1)"
@@ -138,7 +137,7 @@
             </div>
         </div>
     </div>
-
+    <!--------------------------------------------------------------------------------------------------------------->
     <script>
         function mobileMenu() {
             var menu = document.getElementById("mobile-menu");
@@ -149,30 +148,82 @@
             }
         }                             
     </script>
-<!--------------------------------------------------------------------------------------------------------------->
+    <!--------------------------------------------------------------------------------------------------------------->
     <div class="flex sm:flex-wrap sm:justify-between lg:mr-[7%] lg:ml-[10%] mt-5 lg:mt-12 flex-col sm:flex-row">
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem] bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%]">
-            <div class="rounded-t-md h-1/2 bg-[#67ace6] text-2xl flex flex-col justify-center text-center content-center">
+            <div
+                class="rounded-t-md h-1/2 bg-[#67ace6] text-2xl flex flex-col justify-center text-center content-center">
                 <i class=" fa-solid fa-user-graduate "></i>
                 <p class="text-base">Etudiant</p>
             </div>
             <div class="rounded-b-md flex h-1/2">
-                <div class="rounded-bl-md border-r border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center"><p>Candidatures</p></div>
-                <div class="rounded-br-md border-l border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
-                    <select class="rounded-full bg-red-200 text-center mx-2">
-                        <option value="Recherche">Recherche</option>
-                        <option value="En attente">En attente</option>
-                        <option value="Validé">Validé</option>
+                <div
+                    class="rounded-bl-md border-r border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
+                    <p>Candidatures</p>
+                </div>
+                <div
+                    class="rounded-br-md border-l border-gray-300 w-1/2 bg-[#fafafa] flex flex-col justify-center text-center content-center">
+                    <select id="statut" class="rounded-full bg-white text-center mx-2" onchange="staut(this.id)">
+                        <option class="bg-white" value="Recherche">Recherche</option>
+                        <option class="bg-white" value="En attente">En attente</option>
+                        <option class="bg-white" value="Validé">Validé</option>
                     </select>
                 </div>
+
+                <script>
+                    var statut = document.getElementById('statut')
+                    switch (statut.value) {
+                        case 'Recherche':
+                            statut.classList.add('bg-red-400');
+                            break;
+                        case 'En attente':
+                            statut.classList.add('bg-orange-400');
+                            break;
+                        case 'Validé':
+                            statut.classList.add('bg-green-400');
+                            break;
+                    }
+
+
+                    function staut(id) {
+                        var stat = document.getElementById(id);
+                        var bg = document.getElementById('statut');
+                        switch (stat.value) {
+                            case 'Recherche':
+                                if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-green-400")) {
+                                    stat.classList.remove("bg-orange-400")
+                                    stat.classList.remove("bg-green-400")
+                                }
+                                stat.classList.add("bg-red-400")
+                                break;
+                            case 'En attente':
+                                if (stat.classList.contains("bg-red-400") || stat.classList.contains("bg-green-400")) {
+                                    stat.classList.remove("bg-red-400")
+                                    stat.classList.remove("bg-green-400")
+                                }
+                                stat.classList.add("bg-orange-400")
+                                break;
+                            case 'Validé':
+                                if (stat.classList.contains("bg-orange-400") || stat.classList.contains("bg-red-400")) {
+                                    stat.classList.remove("bg-orange-400")
+                                    stat.classList.remove("bg-red-400")
+                                }
+                                stat.classList.add("bg-green-400")
+                                break;
+                        }
+                    }
+                </script>
+
             </div>
         </div>
         <div class="rounded-md w-[90%] sm:w-[30%] h-[8rem]  bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%]">
-            <div class="rounded-t-md sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fe7171] text-2xl flex flex-col justify-center text-center content-center ">
-                <i  class="fa-solid fa-briefcase"></i>
+            <div
+                class="rounded-t-md sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fe7171] text-2xl flex flex-col justify-center text-center content-center ">
+                <i class="fa-solid fa-briefcase"></i>
                 <p class="text-base">Stage</p>
             </div>
-            <div class="rounded-b-md sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fafafa] flex flex-col justify-center text-center content-center">
+            <div
+                class="rounded-b-md sm:h-1/2 md:h-1/2 lg:h-[45] bg-[#fafafa] flex flex-col justify-center text-center content-center">
                 <p>Parcourir les offres</p>
             </div>
         </div>
@@ -180,10 +231,10 @@
         </div>
     </div>
     <div class="flex flex-col sm:flex-row sm:flex-wrap sm:justify-between lg:mr-[7%] lg:ml-[10%] mt-5 lg:mt-12">
-        <div class=" w-[90%] sm:w-[40%] h-60 bg-gray-300 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%]"></div>
+        <div class=" w-[90%] sm:w-[40%] h-60 bg-gray-300 mx-[5%] mb-[2%] sm:mx-[0%] sm:my[0%] sm:mt-[2%]"></div>
         <div class=" w-[90%] sm:w-[50%] h-60 bg-gray-300 mx-[5%] my-[2%] sm:mx-[0%] sm:my[0%]"></div>
     </div>
-<!----------------------------------------------------------------------------------------------------------------->
+    <!----------------------------------------------------------------------------------------------------------------->
 </body>
 
 </html>
