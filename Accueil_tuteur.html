@@ -10,100 +10,137 @@
     <script src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 min-[880px]:h-screen overflow-hidden">
+<body class="bg-gray-100 min-[880px]:h-screen ">
     <header>
         <div class="min-h-full">
             <nav class="bg-gray-900">
-                <div class="mx-auto px-2 min-[640px]:px-3">
+                <div class="mx-auto px-2 lg:ml-0">
                     <div class="relative flex h-12 items-center justify-between">
-                        <!--<div class="absolute inset-y-0 left-0 flex items-center min-[640px]:hidden">
-                    </div>-->
-                        <div class="flex flex-1 min-[640px]:items-stretch min-[640px]:justify-start">
+                        <!--<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        </div>-->
+                        <div class="md:hidden">
+                            <button onclick="mobileMenu()" type="button"
+                                class="inline-flex items-center justify-center rounded-md bg-gray-700 p-2 text-white-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <!-- Menu open: "hidden", Menu closed: "block" -->
+                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <!-- Menu open: "block", Menu closed: "hidden" -->
+                                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+    
+                        <div class="flex flex-1 sm:items-stretch sm:justify-start ml-2 lg:ml-0">
                             <div class="flex flex-shrink-0 items-center">
-                                <img class="block h-10 w-auto lg:hidden h-6" src="./img/krita.png" alt="Your Company">
-                                <img class="hidden min-[640px]:h-10 h-10 w-auto lg:block" src="./img/krita.png"
-                                    alt="Your Company">
+                                <img class="block h-9 w-auto h-6" src="./img/krita.png" alt="Your Company">
                             </div>
-                            <div class="min-[640px]:ml-6 min-[640px]:block">
+                            <div class="sm:ml-6 sm:block">
                                 <div class="flex space-x-4">
-
-                                    <a href="#" class="text-white rounded-min-[640px] px-3 py-2 text-lg font-medium"
+    
+                                    <a href="#" class="text-white rounded-md px-3 py-2 text-lg font-medium"
                                         aria-current="page">InternTracker</a>
                                 </div>
                             </div>
                         </div>
-
+    
                         <!-- Profile dropdown -->
                         <div class="relative ml-3">
                             <div>
                                 <button type="button" onclick="toggleMenu()"
-                                    class="flex rounded-full bg-gray-800 text-min-[640px] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span class="sr-only">Open user menu</span>
                                     <img class="h-8 w-8 rounded-full"
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEymin-[640px]d9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         alt="">
                                 </button>
                             </div>
-
+    
                             <div id="user-menu"
-                                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-min-[640px] bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
-                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
-                                tabindex="-1">
+                                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden"
+                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                                 <!-- Active: "bg-gray-100", Not Active: "" -->
-                                <a href="#" class="block px-4 py-2 text-min-[640px] text-gray-700 hover:bg-gray-100"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-min-[640px] text-gray-700 hover:bg-gray-100"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-min-[640px] text-gray-700 hover:bg-gray-100"
-                                    role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                    tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                    tabindex="-1" id="user-menu-item-1">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                    tabindex="-1" id="user-menu-item-2">Sign out</a>
                             </div>
-                            <!--A mettre dans un fichier JS------------------------------------------------------------------------>
-                            <script>
-                                function toggleMenu() {
-                                    var menu = document.getElementById("user-menu");
-                                    if (menu.classList.contains("hidden")) {
-                                        menu.classList.remove("hidden");
-                                    } else {
-                                        menu.classList.add("hidden");
-                                    }
-                                }                             
-                            </script>
-                            <!----------------------------------------------------------------------------------------------------->
                         </div>
                     </div>
                 </div>
         </div>
         </nav>
         </div>
-
-        <div class="fixed top-0 left-0 h-screen w-12 bg-gray-300 text-black px-4 mt-12 flex justify-center">
-            <!-- Contenu de la side left bar -->
-            <div class="my-4 w-auto" style="margin-top: 0;">
-                <a href=""><i onclick="bgChange(1)"
-                        class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(2)"
-                        class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(3)"
-                        class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
-                <a href=""><i onclick="bgChange(4)"
-                        class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
+    
+        <!--<div class="-mr-2 flex">-->
+        <!-- Mobile menu button -->
+    
+        <!--</div>-->
+        <div>
+            <div class="hidden float-left md:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
+                <!-- Contenu de la side left bar -->
+                <div class="my-4 mt-0 ml-0 w-auto">
+                    <a href=""><i onclick="bgChange(1)"
+                            class="fas fa-tachometer-alt text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
+                    <a href=""><i onclick="bgChange(2)"
+                            class="fa-solid fa-street-view text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
+                    <a href=""><i onclick="bgChange(3)"
+                            class="fa-solid fa-briefcase text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
+                    <a href=""><i onclick="bgChange(4)"
+                            class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
+                </div>
+    
+                <!--<script>
+                function bgChange(number) {
+                    var menu = document.getElementsByClassName("sBarItem");
+                    for (let i = 0; i < menu.length; i++) {
+                        menu[i].classList.remove("bg-blue-500", "text-white");
+                    }
+                    menu[number - 1].classList.add("bg-blue-500", "text-white");
+                }                         
+            </script>-->
+    
             </div>
-
-        </div> 
+            <div class="hidden lg:hidden" id="mobile-menu">
+                <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+                        aria-current="page" id="mobile-menu-item">Dashboard</a>
+    
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                        id="mobile-menu-item">Team</a>
+    
+                    <a href="#"
+                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+                        id="mobile-menu-item">Projects</a>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="flex flex-row flex-wrap justify-center min-[880px]:justify-evenly content-evenly ">
 
         <div class=" flex flex-col max-[880px]:w-7/12 w-3/12 mt-6">
 
-            <div class="flex flex-col justify-center content-center text-center  bg-[#67ade5] border border-[#dfdfdf]  rounded-t-lg ">
+            <div
+                class="flex flex-col justify-center content-center text-center  bg-[#67ade5] border border-[#dfdfdf]  rounded-t-lg ">
                 <i class="fa-solid fa-user-graduate text-2xl"></i>
                 <p class="">Étudiant</p>
             </div>
-            <div class="flex justify-between items-center bg-[#fafafa] divide-x-[3px] divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
+            <div
+                class="flex justify-between items-center bg-[#fafafa] divide-x-[3px] divide-[#cccccc] max-[880px]:h-10 h-20 rounded-b-lg border border-[#dfdfdf] shrink">
                 <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2">
                     <p class="text-center">Gestion Étudiant</p>
-                    
+
                 </div>
                 <div class="flex justify-center items-center max-[880px]:h-8 h-14 shrink basis-1/2 ">
                     <p class="text-center">Statut Recherche</p>
@@ -112,7 +149,8 @@
         </div>
         <div class="flex flex-col max-[880px]:w-7/12 w-3/12 mt-6">
 
-            <div class="flex flex-col justify-center content-center border border-[#dfdfdf] text-center bg-[#fe7171]  rounded-t-lg ">
+            <div
+                class="flex flex-col justify-center content-center border border-[#dfdfdf] text-center bg-[#fe7171]  rounded-t-lg ">
                 <i class="fa-solid fa-briefcase text-2xl"></i>
                 <p class="">Offre</p>
             </div>
@@ -124,7 +162,8 @@
         </div>
         <div class="flex flex-col max-[880px]:w-7/12  w-3/12 mt-6 ">
 
-            <div class="flex flex-col justify-center content-center text-center border border-[#dfdfdf] bg-[#ffe96b] rounded-t-lg ">
+            <div
+                class="flex flex-col justify-center content-center text-center border border-[#dfdfdf] bg-[#ffe96b] rounded-t-lg ">
                 <i class="fa-solid fa-building text-2xl"></i>
                 <p class="">Entreprise</p>
             </div>
@@ -135,55 +174,34 @@
             </div>
         </div>
     </div>
-    <div class=" flex justify-evenly  max-[880px]:flex-col flex-wrap h-1/2 bg-rose-50       ">
-        <div class=" w-5/12 ml-5 mt-10 h-1/2 bg-green-50">
+    <div class=" flex justify-evenly  max-[880px]:flex-col flex-wrap h-1/2">
+        <div class=" w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
             <div class="h-14 bg-white border border-[#dfdfdf] flex items-center justify-center">
                 <h3 class="text-center">En recherche</h3>
             </div>
-            <div class="overflow-y-scroll bg-white">
-                <ul class="list-disc">
-                  <li>Élément 1</li>
-                  <li>Élément 2</li>
-                  <li>Élément 3</li>
-                  <li>Élément 4</li>
-                  <li>Élément 5</li>
-                  <li>Élément 6</li>
-                  <li>Élément 7</li>
-                  <li>Élément 8</li>
-                  <li>Élément 9</li>
-                  <li>Élément 10</li>
-                  <li>Élément 6</li>
-                  <li>Élément 7</li>
-                  <li>Élément 8</li>
-                  <li>Élément 9</li>
-                  <li>Élément 10</li>
-                  <li>Élément 6</li>
-                  <li>Élément 7</li>
-                  <li>Élément 8</li>
-                  <li>Élément 9</li>
-                  <li>Élément 10</li>
-                  <li>Élément 10</li>
-                  <li>Élément 6</li>
-                  <li>Élément 7</li>
-                  <li>Élément 8</li>
-                  <li>Élément 9</li>
-                  <li>Élément 10</li>
-                  <li>Élément 10</li>
-                  <li>Élément 6</li>
-                  <li>Élément 7</li>
-                  <li>Élément 8</li>
-                  <li>Élément 9</li>
-                  <li>aa 10</li>
-                  
-
+            <div class="overflow-y-scroll bg-white h-[100%] border border-[#dfdfdf]">
+                <ul class="list-disc ">
+                    <li>Élément 1</li>
+                    <li>Élément 2</li>
+                    <li>Élément 3</li>
+                    <li>Élément 4</li>
+                    <li>Élément 5</li>
+                    <li>Élément 6</li>
+                    <li>Élément 7</li>
+                    <li>Élément 8</li>
+                    <li>Élément 9</li>
+                    <li>Élément 10</li>
+                    <li>Élément 6</li>
                 </ul>
-              </div>
-        </div>
-        <div class="bg-white min-[880px]:w-5/12 min-[880px]:ml-5 mt-10">
-            <div>
-                oui
             </div>
-            <div>
+        </div>
+        <div class="w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
+            <div class="h-10">
+                <p>
+                    <i class="fa-solid fa-circle-info text-2xl"></i>
+                </p>
+            </div>
+            <div class="bg-white">
                 non
             </div>
         </div>
@@ -191,3 +209,22 @@
 </body>
 
 </html>
+<script>
+    function mobileMenu() {
+        var menu = document.getElementById("mobile-menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+        } else {
+            menu.classList.add("hidden");
+        }
+    };
+
+    function toggleMenu() {
+        var menu = document.getElementById("user-menu");
+        if (menu.classList.contains("hidden")) {
+            menu.classList.remove("hidden");
+        } else {
+            menu.classList.add("hidden");
+        }
+    };  
+</script>
