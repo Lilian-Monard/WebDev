@@ -16,8 +16,6 @@
             <nav class="bg-gray-900">
                 <div class="mx-auto px-2 lg:ml-0">
                     <div class="relative flex h-12 items-center justify-between">
-                        <!--<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        </div>-->
                         <div class="md:hidden">
                             <button onclick="mobileMenu()" type="button"
                                 class="inline-flex items-center justify-center rounded-md bg-gray-700 p-2 text-white-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -98,17 +96,6 @@
                     <a href=""><i onclick="bgChange(4)"
                             class="fa-solid fa-building-columns text-2xl py-2 px-3 hover:bg-gray-400 hover:text-white sBarItem"></i></a>
                 </div>
-    
-                <!--<script>
-                function bgChange(number) {
-                    var menu = document.getElementsByClassName("sBarItem");
-                    for (let i = 0; i < menu.length; i++) {
-                        menu[i].classList.remove("bg-blue-500", "text-white");
-                    }
-                    menu[number - 1].classList.add("bg-blue-500", "text-white");
-                }                         
-            </script>-->
-    
             </div>
             <div class="hidden lg:hidden" id="mobile-menu">
                 <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
@@ -127,8 +114,9 @@
             </div>
         </div>
     </header>
+    <!--Bouton raccourci-->
     <div class="flex flex-row flex-wrap justify-center min-[880px]:justify-evenly content-evenly ">
-
+        <!--Bouton Raccourci Étudiant-->
         <div class=" flex flex-col max-[880px]:w-7/12 w-3/12 mt-6">
 
             <div
@@ -147,6 +135,7 @@
                 </div>
             </div>
         </div>
+        <!--Bouton Raccourci Offre-->
         <div class="flex flex-col max-[880px]:w-7/12 w-3/12 mt-6">
 
             <div
@@ -160,6 +149,7 @@
                 </div>
             </div>
         </div>
+        <!--Bouton Raccourci Entreprise-->
         <div class="flex flex-col max-[880px]:w-7/12  w-3/12 mt-6 ">
 
             <div
@@ -174,7 +164,9 @@
             </div>
         </div>
     </div>
+    <!--Statut étudiant + statistiques -->
     <div class=" flex justify-evenly  max-[880px]:flex-col flex-wrap h-1/2">
+        <!--Statut étudiant-->
         <div class=" w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
             <div class="h-14 bg-white border border-[#dfdfdf] flex items-center justify-center">
                 <h3 class="text-center">En recherche</h3>
@@ -195,6 +187,7 @@
                 </ul>
             </div>
         </div>
+        <!--Statistiques-->
         <div class="w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
             <div class="h-10">
                 <p>
