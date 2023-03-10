@@ -108,18 +108,56 @@
                     <input type="text" name="nb_ancien_stagiaire"
                         placeholder="Nombre d'anciens stagiaires venant de CESI"
                         class="w-[100%] border-solid border-gray-400 border rounded my-1 mb-3">
-
-                    
-                    <div class="flex  justify-evenly">
-                        <button type="reset" name="reset" class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Annuler </button>
-                        <button type="submit" name="valider" class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Valider </button>
+                    <div>
+                        <i class="fa fa-star" name="star1" id="star1"></i>
+                        <i class="fa fa-star" name="star2" id="star2"></i>
+                        <i class="fa fa-star" name="star3" id="star3"></i>
+                        <i class="fa fa-star" name="star4" id="star4"></i>
+                        <i class="fa fa-star" name="star5" id="star5"></i>
                     </div>
+
+                    <div class="flex  justify-evenly">
+                        <button type="reset" name="reset"
+                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Annuler
+                        </button>
+                        <button type="submit" name="valider"
+                            class="border border-solid border-gray-500 p-1 rounded-sm w-16 bg-[#f0f0f0]"> Valider
+                        </button>
+                    </div>
+
                 </form>
             </div>
         </div>
 
     </div>
+<script>
+    let star;
+    function valeur_star(star){
+        star = (this.id)
+    }
 
+    fa-star.addEventListener("click",valeur_star)
+
+    function star(etoile){
+        switch(etoile){
+            case "star5":
+
+            break;
+            case "star4":
+
+            break;
+            case "star3":
+
+            break;
+            case "star2":
+
+            break;
+            case "star1":
+
+            break;
+        }
+    }
+</script>
 
 
 
