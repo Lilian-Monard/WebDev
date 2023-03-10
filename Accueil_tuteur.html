@@ -10,13 +10,13 @@
     <script src="https://kit.fontawesome.com/8ed527737a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gray-100 min-[880px]:h-screen ">
+<body class="bg-gray-100 min-[880px]:h-screen min-[880px]:overflow-hidden">
     <header>
         <div class="min-h-full">
             <nav class="bg-gray-900">
                 <div class="mx-auto px-2 lg:ml-0">
                     <div class="relative flex h-12 items-center justify-between">
-                        <div class="md:hidden">
+                        <div class="min-[880px]:hidden">
                             <button onclick="mobileMenu()" type="button"
                                 class="inline-flex items-center justify-center rounded-md bg-gray-700 p-2 text-white-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 aria-controls="mobile-menu" aria-expanded="false">
@@ -84,7 +84,7 @@
     
         <!--</div>-->
         <div>
-            <div class="hidden float-left md:block top-0 left-0 h-screen w-12 bg-gray-300 text-black flex justify-center">
+            <div class="hidden float-left min-[880px]:block top-0 left-0 h-screen  w-12 bg-gray-300 text-black flex justify-center">
                 <!-- Contenu de la side left bar -->
                 <div class="my-4 mt-0 ml-0 w-auto">
                     <a href=""><i onclick="bgChange(1)"
@@ -165,13 +165,13 @@
         </div>
     </div>
     <!--Statut étudiant + statistiques -->
-    <div class=" flex justify-evenly  max-[880px]:flex-col flex-wrap h-1/2">
+    <div class=" flex justify-evenly  max-[880px]:flex-col items-center flex-wrap h-3/6">
         <!--Statut étudiant-->
-        <div class=" w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
+        <div class="  w-8/12 min-[880px]:w-5/12 ml-5 mt-10  h-[100%] bg-green-50">
             <div class="h-14 bg-white border border-[#dfdfdf] flex items-center justify-center">
                 <h3 class="text-center">En recherche</h3>
             </div>
-            <div class="overflow-y-scroll bg-white h-[100%] border border-[#dfdfdf]">
+            <div class="overflow-y-scroll bg-white h-64 min-[880px]:h-[100%] border border-[#dfdfdf]">
                 <ul class="list-disc ">
                     <li>Élément 1</li>
                     <li>Élément 2</li>
@@ -184,24 +184,59 @@
                     <li>Élément 9</li>
                     <li>Élément 10</li>
                     <li>Élément 6</li>
+                    <li>Élément 5</li>
+                    <li>Élément 6</li>
+                    <li>Élément 7</li>
+                    <li>Élément 8</li>
+                    <li>Élément 9</li>
+                    <li>Élément 10</li>
+                    <li>Élément 6</li>
                 </ul>
             </div>
         </div>
         <!--Statistiques-->
-        <div class="w-5/12 ml-5 mt-10 h-[100%] bg-green-50">
-            <div class="h-10">
-                <p>
-                    <i class="fa-solid fa-circle-info text-2xl"></i>
+        <div class="flex items-center flex-col min-[880px]:w-5/12 w-8/12 ml-5 mt-10 h-[117%] bg-white border border-[#dfdfdf] overflow-hidden">
+            <div class="h-10 self-start mt-2">
+                <p class="px-10">
+                    <i class="fa-solid fa-circle-info text-2xl"></i>Statut recherches étudiants :
                 </p>
             </div>
-            <div class="bg-white">
-                non
+            <div class="bg-white h-32 w-10/12 divide-y mt-2">
+                <div class="h-10 flex items-center justify-between"><p>Stage trouvé :</p> <div class="rounded-full bg-green-200 px-5"> 20/46</div></div>
+                <div class="h-10 flex items-center justify-between"><p>En attente de papier :</p><div class="rounded-full bg-orange-200 px-5"> 10/46</div></div>
+                <div class="h-10 flex items-center justify-between"><p>En recherche</p><div class="rounded-full bg-red-200 px-5"> 16/46</div></div>
+            </div>
+            <div class="min-[880px]:pt-10">
+                <canvas id="graph" width="100%" height="100%" style="display: block; height: 66px; width: 133px;" class="chartjs-render-monitor"></canvas>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script>
+        const graph = document.getElementById("graph").getContext("2d");
+
+        let massPopChart = new Chart(graph, {
+            type: "doughnut", // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                datasets: [
+                    {
+                        label: "Population en M ",
+                        data: [20, 10, 16],
+                        // backgroundColor: "blue",
+                        backgroundColor: [
+                            "red",
+                            "orange",
+                            "green",
+                        ],
+                        hoverBorderWidth: 3,
+                    },
+                ],
+            },
+        });
+    </script>
 <script>
     function mobileMenu() {
         var menu = document.getElementById("mobile-menu");
